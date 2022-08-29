@@ -47,10 +47,15 @@ const Layout = (props: Props) => {
           )}
           {route.pathname === "/" && (
             <div className={styles.trendingContainer}>
-              <Recommended page={movieArrayParams} />
+              <Recommended />
             </div>
           )}
           {route.pathname === "/movies" && (
+            <div className={styles.trendingContainer}>
+              <MoviesPage page={movieArrayParams} />
+            </div>
+          )}
+          {route.pathname === "/tv-series" && (
             <div className={styles.trendingContainer}>
               <MoviesPage page={movieArrayParams} />
             </div>

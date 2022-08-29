@@ -4,11 +4,9 @@ import MovieData from "../../MovieData/MovieData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFilm } from "@fortawesome/free-solid-svg-icons";
 
-interface Props {
-  page: string;
-}
+interface Props {}
 
-const Recommended = ({ page }: Props) => {
+const Recommended = ({}: Props) => {
   const displayedMovies = MovieData.map((movie) => {
     const icon = <FontAwesomeIcon icon={faFilm} size="xs" />;
     return (

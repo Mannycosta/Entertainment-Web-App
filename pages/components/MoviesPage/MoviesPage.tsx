@@ -2,7 +2,7 @@ import React from "react";
 import styles from "../MoviesPage/MoviesPage.module.css";
 import MovieData from "../../MovieData/MovieData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFilm } from "@fortawesome/free-solid-svg-icons";
+import { faFilm, faTv } from "@fortawesome/free-solid-svg-icons";
 
 interface Props {
   page: string;
@@ -11,7 +11,12 @@ interface Props {
 const MoviesPage = ({ page }: Props) => {
   const movies = MovieData.filter((movie) => movie.category === page);
   const displayedMovies = movies.map((movie) => {
-    const icon = <FontAwesomeIcon icon={faFilm} size="xs" />;
+    const icon =
+      movie.category === "Movie" ? (
+        <FontAwesomeIcon icon={faFilm} size="xs" />
+      ) : (
+        <FontAwesomeIcon icon={faTv} size="xs" />
+      );
     return (
       <div>
         <div className={styles.imageContainer}>
@@ -36,7 +41,7 @@ const MoviesPage = ({ page }: Props) => {
   return (
     <>
       <div className={styles.container}>
-        <h1>Movies</h1>
+        <h1>{page}</h1>
         <div className={styles.movieContainer}>{displayedMovies}</div>
       </div>
     </>
