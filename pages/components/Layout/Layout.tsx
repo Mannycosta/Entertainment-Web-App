@@ -5,6 +5,7 @@ import SearchBar from "../SearchBar/SearchBar";
 import { useRouter } from "next/router";
 import Trending from "../Trending/Trending";
 import MoviesPage from "../MoviesPage/MoviesPage";
+import Recommended from "../Recommended/Recommended";
 
 interface Props {}
 
@@ -42,6 +43,11 @@ const Layout = (props: Props) => {
           {route.pathname === "/" && (
             <div className={styles.trendingContainer}>
               <Trending page={movieArrayParams} />
+            </div>
+          )}
+          {route.pathname === "/" && (
+            <div className={styles.trendingContainer}>
+              <Recommended page={movieArrayParams} />
             </div>
           )}
           {route.pathname === "/movies" && (

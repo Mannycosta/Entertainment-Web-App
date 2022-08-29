@@ -14,12 +14,12 @@ interface Props {
 }
 
 const Trending = ({ page }: Props) => {
-  const moviesByPage =
-    page === "Movie" || page === "TV Series"
-      ? MovieData.filter((movie) => movie.category === `${page}`)
-      : page === "Bookmarked"
-      ? MovieData.filter((movie) => movie.isBookmarked)
-      : MovieData;
+  // const moviesByPage =
+  //   page === "Movie" || page === "TV Series"
+  //     ? MovieData.filter((movie) => movie.category === `${page}`)
+  //     : page === "Bookmarked"
+  //     ? MovieData.filter((movie) => movie.isBookmarked)
+  //     : MovieData;
 
   const trendingMovies = MovieData.filter((movie) => movie.isTrending);
 

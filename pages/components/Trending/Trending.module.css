@@ -60,12 +60,6 @@
   border-radius: 8px;
 }
 
-/* .imageContainer:hover:after {
-  background: #000;
-  opacity: 0.8;
-  border-radius: 7px;
-} */
-
 .movieBox img {
   border-radius: 8px;
   display: block;
@@ -100,7 +94,8 @@
   height: 230px;
   align-items: center;
   justify-content: space-between;
-  padding-left: 35px;
+  padding-left: 10px;
+  margin-bottom: 40px;
 }
 
 .scrollBtn {
