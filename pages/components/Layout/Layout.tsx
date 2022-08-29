@@ -52,12 +52,12 @@ const Layout = (props: Props) => {
           )}
           {route.pathname === "/movies" && (
             <div className={styles.trendingContainer}>
-              <MoviesPage page={movieArrayParams} />
+              <MoviesPage page={movieArrayParams} title={"Movies"} />
             </div>
           )}
           {route.pathname === "/tv-series" && (
             <div className={styles.trendingContainer}>
-              <MoviesPage page={movieArrayParams} />
+              <MoviesPage page={movieArrayParams} title={"TV Series"} />
             </div>
           )}
         </div>

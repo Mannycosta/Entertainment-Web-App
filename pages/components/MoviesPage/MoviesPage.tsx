@@ -6,9 +6,10 @@ import { faFilm, faTv } from "@fortawesome/free-solid-svg-icons";
 
 interface Props {
   page: string;
+  title?: string;
 }
 
-const MoviesPage = ({ page }: Props) => {
+const MoviesPage = ({ page, title }: Props) => {
   const movies = MovieData.filter((movie) => movie.category === page);
   const displayedMovies = movies.map((movie) => {
     const icon =
@@ -41,7 +42,7 @@ const MoviesPage = ({ page }: Props) => {
   return (
     <>
       <div className={styles.container}>
-        <h1>{page}</h1>
+        <h1>{title}</h1>
         <div className={styles.movieContainer}>{displayedMovies}</div>
       </div>
     </>
