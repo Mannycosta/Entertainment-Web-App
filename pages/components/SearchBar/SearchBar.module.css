@@ -1,0 +1,27 @@
+.searchDiv {
+  padding-top: 32px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.searchDiv input {
+  background-color: transparent;
+  border: none;
+  width: 80vw;
+  color: white;
+  font-size: 20px;
+  padding-bottom: 14px;
+}
+
+.searchDiv input:focus {
+  outline: none;
+  border-bottom: 1px solid var(--lightest-blue);
+}
+
+.icon {
+  font-size: 25px;
+  color: white;
+  margin-right: 20px;
+  padding-bottom: 14px;
+}

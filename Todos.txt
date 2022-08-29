@@ -1,0 +1,26 @@
+ok lets get it!
+
+All Pages
+  Layout Component
+    Features 4 buttons 
+    Plus a User Button at the end
+
+The Main Page 
+  Search Component
+  Trending Component
+  Recommended for you Component
+
+Movies Page (Make sure to only filter Movies)
+  Search Component
+  Trending Component
+  Recommended for you Component
+
+TV Page (Make sure to only filter TV Series)
+  Search Component
+  Trending Component
+  Recommended for you Component 
+
+Bookmarked Page
+  Search Component
+  Bookmarked Movies
+  Bookmarked TV Series
