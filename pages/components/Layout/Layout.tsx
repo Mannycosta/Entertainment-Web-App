@@ -4,6 +4,7 @@ import MenuBar from "../MenuBar/MenuBar";
 import SearchBar from "../SearchBar/SearchBar";
 import { useRouter } from "next/router";
 import Trending from "../Trending/Trending";
+import MoviesPage from "../MoviesPage/MoviesPage";
 
 interface Props {}
 
@@ -38,12 +39,16 @@ const Layout = (props: Props) => {
           <div className={styles.searchContainer}>
             <SearchBar searchDescription={searchDescription} />
           </div>
-          <div className={styles.trendingContainer}>
-            <Trending page={movieArrayParams} />
-          </div>
-          {/* <div className={styles.allMoviesContainer}>
-            <SearchBar />
-          </div> */}
+          {route.pathname === "/" && (
+            <div className={styles.trendingContainer}>
+              <Trending page={movieArrayParams} />
+            </div>
+          )}
+          {route.pathname === "/movies" && (
+            <div className={styles.trendingContainer}>
+              <MoviesPage page={movieArrayParams} />
+            </div>
+          )}
         </div>
       </div>
     </>
