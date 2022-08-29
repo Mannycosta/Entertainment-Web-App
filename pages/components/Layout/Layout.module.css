@@ -3,5 +3,10 @@
   margin-top: 32px;
 }
 
-.trendingContainer {
+.menuContainer {
+  position: fixed;
+}
+
+.contentContainer {
+  margin-left: 160px;
 }
