@@ -8,6 +8,7 @@ interface Props {
 }
 
 const SearchBar = ({ searchDescription }: Props) => {
+  console.log("test");
   return (
     <div className={styles.searchDiv}>
       <FontAwesomeIcon icon={faMagnifyingGlass} className={styles.icon} />

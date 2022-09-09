@@ -26,7 +26,7 @@
 }
 
 .container a:hover {
-  color: white;
+  color: var(--red-accent);
   cursor: pointer;
 }
 

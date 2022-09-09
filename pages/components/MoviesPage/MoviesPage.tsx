@@ -3,6 +3,7 @@ import styles from "../MoviesPage/MoviesPage.module.css";
 import MovieData from "../../MovieData/MovieData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFilm, faTv } from "@fortawesome/free-solid-svg-icons";
+import { v4 as uuidv4 } from "uuid";
 
 interface Props {
   page: string;
@@ -19,7 +20,7 @@ const MoviesPage = ({ page, title }: Props) => {
         <FontAwesomeIcon icon={faTv} size="xs" />
       );
     return (
-      <div>
+      <div key={uuidv4()}>
         <div className={styles.imageContainer}>
           <img
             src={`${movie.thumbnail.regular.large.slice(1)}`}

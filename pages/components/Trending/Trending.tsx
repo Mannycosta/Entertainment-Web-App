@@ -8,6 +8,7 @@ import {
   faChevronLeft,
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
+import { v4 as uuidv4 } from "uuid";
 
 interface Props {
   page: string;
@@ -32,7 +33,7 @@ const Trending = ({ page }: Props) => {
       );
 
     return (
-      <div className={styles.movieBox}>
+      <div className={styles.movieBox} key={uuidv4()}>
         <div className={styles.imageContainer}>
           <img
             src={`${movie.thumbnail.trending?.large.slice(1)}`}
