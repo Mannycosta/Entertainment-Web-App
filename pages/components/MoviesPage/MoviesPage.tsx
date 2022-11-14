@@ -4,21 +4,31 @@ import MovieData from "../../MovieData/MovieData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFilm, faTv } from "@fortawesome/free-solid-svg-icons";
 import { v4 as uuidv4 } from "uuid";
+import SearchBar from "../SearchBar/SearchBar";
 
 interface Props {
   page: string;
   title?: string;
+  searchFilter: string;
 }
 
-const MoviesPage = ({ page, title }: Props) => {
+const MoviesPage = ({ page, title, searchFilter }: Props) => {
   const movies = MovieData.filter((movie) => movie.category === page);
-  const displayedMovies = movies.map((movie) => {
+
+  const searchedMovies = movies.filter(
+    (movie) =>
+      movie.title.includes(searchFilter) ||
+      movie.title.toLowerCase().includes(searchFilter)
+  );
+
+  const displayedMovies = searchedMovies.map((movie) => {
     const icon =
       movie.category === "Movie" ? (
         <FontAwesomeIcon icon={faFilm} size="xs" />
       ) : (
         <FontAwesomeIcon icon={faTv} size="xs" />
       );
+
     return (
       <div key={uuidv4()}>
         <div className={styles.imageContainer}>

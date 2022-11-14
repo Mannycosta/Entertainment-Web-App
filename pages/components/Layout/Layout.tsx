@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Layout.module.css";
 import MenuBar from "../MenuBar/MenuBar";
 import SearchBar from "../SearchBar/SearchBar";
@@ -30,6 +30,8 @@ const Layout = (props: Props) => {
       ? "Bookmarked"
       : "/";
 
+  const [searchText, setSearchText] = useState("");
+
   return (
     <>
       <div className={styles.container}>
@@ -38,7 +40,11 @@ const Layout = (props: Props) => {
         </div>
         <div className={styles.contentContainer}>
           <div className={styles.searchContainer}>
-            <SearchBar searchDescription={searchDescription} />
+            <SearchBar
+              searchDescription={searchDescription}
+              searchText={searchText}
+              setSearchText={setSearchText}
+            />
           </div>
           {route.pathname === "/" && (
             <div className={styles.trendingContainer}>
@@ -52,12 +58,20 @@ const Layout = (props: Props) => {
           )}
           {route.pathname === "/movies" && (
             <div className={styles.trendingContainer}>
-              <MoviesPage page={movieArrayParams} title={"Movies"} />
+              <MoviesPage
+                page={movieArrayParams}
+                title={"Movies"}
+                searchFilter={searchText}
+              />
             </div>
           )}
           {route.pathname === "/tv-series" && (
             <div className={styles.trendingContainer}>
-              <MoviesPage page={movieArrayParams} title={"TV Series"} />
+              <MoviesPage
+                page={movieArrayParams}
+                title={"TV Series"}
+                searchFilter={searchText}
+              />
             </div>
           )}
         </div>
